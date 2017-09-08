@@ -1,0 +1,120 @@
+///////////////////ARRAY LIST /////////////////////////////////////
+import java.util* //* means import all of it
+public CLass Play{
+  public static void main(String[] args){
+      String [] a = { "Gandalf","Frodo","SAm","Aragorn","Boromir"};
+
+    System.out.println("Contents od a: ");
+    for(String s:a)//for each string in a
+      System.out.println(s);
+      
+      List<String> alist = new ArrayList<>();
+      
+      for(String s:a)
+        //alist.add(alist.size(),s); //below it assums you mean at the end
+        alist.add(s); //add to back
+        //alist.add(0,s); //add to front, reverse the list.
+        
+      System.out.println("Contents of alist: ");
+      for (String s:alist)
+        System.out.println(s);
+        
+      Lidt<Integer> intList = new ArrayList<>();
+      int n = 1000000;
+      System.out.println("adding to intList at back..."); //instant
+      System.out.flush();
+      for (int i = 0; i<n; i++){
+        intList.add(i); /adds to end of List
+      }
+      System.out.println("Done!");
+  }
+  
+   /*System.out.println("adding to intList at front..."); //slow, can run out of heap size
+      System.out.flush();
+      for (int i = 0; i<n; i++){
+        intList.add(0,i); /adds to end of List
+      }
+      System.out.println("Done!");*/
+      
+      alist.add(2,"Gollum");
+      remove(alist.size()-1); //last item is size()-1;
+      System.out.println("Contents of alist: ");
+      for (String s:alist)
+        System.out.println(s);
+        
+        
+      Set<String> uset = new LinkedHashSet<>(); //changed to Linked
+      for(Strings:a)
+        uset.add(s);
+      System.out.println("Contents of uset: ");
+      for (String s:uset)
+        System.out.println(s);
+      uset.add("Gollum");
+      remove("Boromir");
+      System.out.println("Contents of uset: ");
+      for (String s:uset)
+        System.out.println(s);
+      
+      
+      System.out.println("s Frodo still in th group?" + uset.contains("Frodo"));
+      
+      intList = new ArrayList<>();
+      Set<Integer> intSet = new LinkedHashSet<>(); //cahnged to Linked
+      n = 100000;
+      for(int i -0; i<n; i++){
+        intList.add(i);
+        intSet.add(i);
+      }
+      
+      System.ut.println("Searching a set...");
+      System.out.flush();
+      long t = System.nanoTime(); //64 bit int
+      
+      for(int i=0; i<n*2; i+=){
+        intSet.contains(i);
+      }
+      t = System.nanoTime() - t; //measures the difference
+      System.out.println ("Done in ") + t + " nanoseconds"); //for 10 000 ints 1390649
+      
+      System.ut.println("Searching a list...");
+      System.out.flush();
+      long t = System.nanoTime();
+      for(int i=0; i<n*2; i+=){
+        intList.contains(i);
+      }
+      t = System.nanoTime() - t; //measures the difference
+      System.out.println ("Done in ") + t + " nanoseconds"); //1025070874 aka longer than sets
+
+      SortedSet<String> sset = new TreeSet<>();
+      for(String s:a)
+        sset.add(s); //sset.addAll(a);
+      Stem.out.println ("Contents of sset...");
+      for(String s:sset)
+        System.out.println(s);
+      
+      System.out.println ("Contents of tail set...");
+      SortedSet<String> tail = sset.tailSet("Gimli");
+      sset.add("Gollum");
+      for(String s:tail)
+        System.ou.printlns);
+        
+      
+      
+  }
+}
+
+//Command line :
+javac Play.java
+java Play
+//Prints all names in a etc
+Ctrl-c to cancel a run
+//true for frodo is returned
+//print sset prints in alphabetical order sorting
+//tail set print Gimli and on. Whengollum is added, gollum gets printed in tail set since they are linked.
+//
+////////////////////////////SETS /////////////////////////////////////////////
+
+///IDE///
+
+
+///COMMAND LINE///
