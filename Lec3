@@ -1,1 +1,188 @@
 
+import java.util* 
+public CLass Play{
+  public static void main(String[] args){
+      String [] a = { "Gandalf","Frodo","SAm","Aragorn","Boromir"};
+
+    System.out.println("Contents od a: ");
+    for(String s:a)//for each string in a
+      System.out.println(s);
+      
+      List<String> alist = new ArrayList<>();
+      
+      for(String s:a)
+        //alist.add(alist.size(),s); 
+        alist.add(s); 
+        //alist.add(0,s); 
+        
+      System.out.println("Contents of alist: ");
+      for (String s:alist)
+        System.out.println(s);
+        
+      Lidt<Integer> intList = new ArrayList<>();
+      int n = 1000000;
+      System.out.println("adding to intList at back..."); 
+      System.out.flush();
+      for (int i = 0; i<n; i++){
+        intList.add(i); /adds to end of List
+      }
+      System.out.println("Done!");
+  }
+  
+   /*System.out.println("adding to intList at front..."); 
+      System.out.flush();
+      for (int i = 0; i<n; i++){
+        intList.add(0,i); /adds to end of List
+      }
+      System.out.println("Done!");*/
+      
+      alist.add(2,"Gollum");
+      remove(alist.size()-1); 
+      System.out.println("Contents of alist: ");
+      for (String s:alist)
+        System.out.println(s);
+        
+        
+      Set<String> uset = new LinkedHashSet<>(); 
+      for(Strings:a)
+        uset.add(s);
+      System.out.println("Contents of uset: ");
+      for (String s:uset)
+        System.out.println(s);
+      uset.add("Gollum");
+      remove("Boromir");
+      System.out.println("Contents of uset: ");
+      for (String s:uset)
+        System.out.println(s);
+      
+      
+      System.out.println("s Frodo still in th group?" + uset.contains("Frodo"));
+      
+      intList = new ArrayList<>();
+      Set<Integer> intSet = new LinkedHashSet<>();
+      n = 100000;
+      for(int i -0; i<n; i++){
+        intList.add(i);
+        intSet.add(i);
+      }
+      
+      System.ut.println("Searching a set...");
+      System.out.flush();
+      long t = System.nanoTime();
+      
+      for(int i=0; i<n*2; i+=){
+        intSet.contains(i);
+      }
+      t = System.nanoTime() - t; 
+      System.out.println ("Done in ") + t + " nanoseconds"); 
+      
+      System.ut.println("Searching a list...");
+      System.out.flush();
+      long t = System.nanoTime();
+      for(int i=0; i<n*2; i+=){
+        intList.contains(i);
+      }
+      t = System.nanoTime() - t; 
+      System.out.println ("Done in ") + t + " nanoseconds"); 
+
+      SortedSet<String> sset = new TreeSet<>();
+      for(String s:a)
+        sset.add(s); //sset.addAll(a);
+      Stem.out.println ("Contents of sset...");
+      for(String s:sset)
+        System.out.println(s);
+      
+      System.out.println ("Contents of tail set...");
+      SortedSet<String> tail = sset.tailSet("Gimli");
+      sset.add("Gollum");
+      for(String s:tail)
+        System.ou.printlns);
+        
+      //////////////////////////LECTURE 3 ADDS/////////////////////////////////
+      
+      Map<String,Integer> map = HashMap<>(); //keys are going to be strings, values ints /hashmpa is implementation for a map
+      map.put("java",9);
+      map.put("Javascript",5);
+      map.put("Python",7);
+      map.put("C++",10);
+      map.put("BASIC",0);
+      map.put("HTML/CSS",6); //keys are unique but values could have been duplicated. 
+                              //duplicate keys only regsiter the latest value of the key
+      
+      System.out.println("Contents of map : ");
+      for(String k:keySet()){
+        System.out.println(k+" => "+ ma.get(k)); //prints it out in any order 
+                                               // get key that does not exist: prints null for value 
+      }
+      List<Maos.Entry<String,Integer>> entryList = new ArrayList<>(); 
+      entryList.addAll(map.entrySet()); //grabs all entry object of map 
+      System.out.println"Contents of entryList :");
+      for(Map.Entry<String,Integer> e:entryList){
+        System.out.println(e.getKey()+ " => " + e.getValue());
+      }
+      
+      SortedMap<String,Integer> smap = new TreeMap<>();
+      map.put("java",9);
+      map.put("Javascript",5);
+      map.put("Python",7);
+      map.put("C++",10);
+      map.put("BASIC",0);
+      map.put("HTML/CSS",6);
+       System.out.println("Contents of map : ");
+      for(String k:keySet()){
+        System.out.println(k+" => "+ ma.get(k)); /alphabetical printing
+      }
+      
+      System.out.println("Before sorting...");
+      for (String s:alist){
+        System.out.println(s);
+      }
+        
+      Collections.sort(alist);
+      System.out.println("After sorting...");
+      for (String s:alist){
+        System.out.println(s);
+      }
+      
+      Collections.sort(alist,new Comparator<String>(){  //create new comparator object as you call sort
+        public int compare(String x, String y){
+          return x.length()-y.length(); //sorts smallest length to largest
+        }
+      });
+      
+      Deque<String> dq = new ArrayDeque<>();
+      dq.addLast("are");
+      dq.addFirst("Structures");
+      dq.addLast("fun");
+      dq.addFirst("data");
+      System.out.println("Contents of deque...");
+      for(String s:dq)
+        System.out.println(s);
+      
+      dq.removeLast();
+      dq/removeLast();
+      dq.addForst("<3);
+      dq.addFirst("I");
+      System.out.println("Contents of deque...");
+      for(String s:dq)
+        System.out.println(s);
+      
+      Queue<String> q = new LinkedList<>();
+      
+      Queue<String> pq = new PriorityQueue<>();
+      Queue<String> pq = new PriorityQueue<>(new COmparator<String>(){
+        public int compare (String x, String y){
+          return;
+      pq.addAll(alist);
+      System.out.println ("Contents of priority queue: ");
+      /*
+      for(String s:pq){
+        System.out.println(s); //cannot guarantee order in priority queue
+                              // only guarantee is item removed is smallest or first one
+      } */ //not good !
+      for (int i=0; i<pq.size(); i++){
+        System.out.println(pq.remove()); //in sorted order now
+      }
+      
+  }
+}
