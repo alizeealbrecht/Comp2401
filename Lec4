@@ -1,0 +1,60 @@
+public class BigO{
+
+  public static void main(String[] args){
+  
+    String str = "";
+    int n = 100; //O(1) creating a variable is doing one thing
+    
+    for(int i =0; i<n; i++){ // O(n)
+      str+="x"; // this is 2 operations. taking str + x an assigning it O(1)
+    } //total is biggest one O(n)
+    
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    
+    for(int i =0; i<n; i+=2){ // We skip every other value i+=2, so it is O(n) because we drop constant 1/2O(n)
+      str+="x"; 
+    } 
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    
+    for(int i=1; i<n; i*=2){  //the size of our increment gets bigger. O(log(n))
+      str+="x"; 
+    }
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    
+    int m = n;
+    while (m<1){ //exact same number of steps than the loop above O(log(n))
+      str+="x";
+      m=m/2;
+    }
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    
+    for(int i=0; i<n; i++){  //O(n^2)
+      for(int j=0; j<n; j++){
+        str+="x";
+      }
+    }
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    
+    for(int i=0; i<n; i++){ //O(n)
+      str+="x";
+    }
+    for(int j=0; j<n; j++){ //O(n)
+        str+="x";
+    } //these are not nested, so they get added, O(n)
+    System.out.println(str.length()); //uses this to know how many operations we do
+    str="";
+    ////////////in command line running it so far:
+    100 ; 50; 7; 6; 10000; 200; 
+    
+  }
+}
+
+
+////////////runtimes////////////
+PASTE CODE HERE and comment these :
+
